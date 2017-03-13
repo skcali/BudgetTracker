@@ -1,89 +1,123 @@
 <!doctype html>
 
 <html lang="en" ng-app="BudgetTracker">
+
 <head>
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
-  <meta charset="utf-8">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <meta charset="utf-8">
 
-  <title>Budget Tracker App</title>
+    <title>Budget Tracker App</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- inject:css -->
-  <!-- endinject -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- inject:css -->
+    <!-- endinject -->
 </head>
+
 <body ng-controller="btCtrl as btCtrl">
-  <!-- bower:js -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <!-- endbower -->
-  <div class="container-fluid">
-    <div class="col-md-4 top-buffer">
-      <div class="panel panel-success top-buffer">
-        <div class="panel-heading">Add todo item</div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label>Text:</label>
-            <input ng-model="todoApp.todoName" type="text" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Priority:</label>
-            <select class="form-control" ng-model="todoApp.priority" ng-options="priority[0] for priority in todoApp.priorities">
-              <option value="" selected disabled>Please select...</option>
-            </select>
-          </div>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <div class="container-fluid">
+        <div class="col-md-3 top-buffer">
+            <div class="panel panel-success top-buffer">
+                <div class="panel-heading">Income Entries</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <input ng-model="" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Amount:</label>
+                        <input type="number" class="form-control" ng-model="" />
+                    </div>
+                    <button type="button" class="btn btn-success btn-block" ng-click="">+ Add Income</button>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Paycheck</td>
+                                <td class="text-right">$4000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div class="panel-footer"><button type="button" class="btn btn-success" ng-click="todoApp.addTodo()">Add Item</button></div>
-      </div>
-    </div>
-    <div class="col-md-4 top-buffer">
-      <div class="panel panel-success top-buffer">
-        <div class="panel-heading">Add todo item</div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label>Text:</label>
-            <input ng-model="todoApp.todoName" type="text" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Priority:</label>
-            <select class="form-control" ng-model="todoApp.priority" ng-options="priority[0] for priority in todoApp.priorities">
-              <option value="" selected disabled>Please select...</option>
-            </select>
-          </div>
+        <div class="col-md-3 top-buffer">
+            <div class="panel panel-danger top-buffer">
+                <div class="panel-heading">Expense Entries</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <input ng-model="" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Amount:</label>
+                        <input type="number" class="form-control" ng-model="" />
+                    </div>
+                    <button type="button" class="btn btn-danger btn-block" ng-click="">+ Add Income</button>
+                    <hr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rent</td>
+                                <td class="text-right">$1500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div class="panel-footer"><button type="button" class="btn btn-success" ng-click="todoApp.addTodo()">Add Item</button></div>
-      </div>
-    </div>
-    <div class="col-md-4 top-buffer">
-      <div class="panel panel-success top-buffer">
-        <div class="panel-heading">Add todo item</div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label>Text:</label>
-            <input ng-model="todoApp.todoName" type="text" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Priority:</label>
-            <select class="form-control" ng-model="todoApp.priority" ng-options="priority[0] for priority in todoApp.priorities">
-              <option value="" selected disabled>Please select...</option>
-            </select>
-          </div>
+        <div class="col-md-3 top-buffer">
+            <div class="panel panel-info top-buffer">
+                <div class="panel-heading">Summary</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class>Total Income</th>
+                                <th>Total Expense</th>
+                                <th>Left After Spending</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$4000</td>
+                                <td>$1500</td>
+                                <td>$2500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div class="panel-footer"><button type="button" class="btn btn-success" ng-click="todoApp.addTodo()">Add Item</button></div>
-      </div>
     </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-  <!-- inject:js -->
-  <script src="app/app.js"></script>
-  <script src="app/controller/controller.js"></script>
-  <!-- endinject -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <!-- inject:js -->
+    <script src="app/app.js"></script>
+    <script src="app/controller/controller.js"></script>
+    <!-- endinject -->
 </body>
+
 </html>

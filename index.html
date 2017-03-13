@@ -1,17 +1,26 @@
 <!doctype html>
 
-<html lang="en" ng-app="VSTDL">
+<html lang="en" ng-app="BudgetTracker">
 <head>
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
   <meta charset="utf-8">
 
-  <title>Very Simple Todo App</title>
+  <title>Budget Tracker App</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- inject:css -->
+  <!-- endinject -->
 </head>
-
-<body ng-controller="todoApp as todoApp">
+<body ng-controller="btCtrl as btCtrl">
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- endbower -->
   <div class="container-fluid">
     <div class="col-md-4 top-buffer">
       <div class="panel panel-success top-buffer">
@@ -70,10 +79,11 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <!-- inject:js -->
+  <script src="app/app.js"></script>
+  <script src="app/controller/controller.js"></script>
+  <!-- endinject -->
 </body>
 </html>

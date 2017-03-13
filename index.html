@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en" ng-app="VSTDL">
+<head>
+  <meta charset="utf-8">
+
+  <title>Very Simple Todo App</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body ng-controller="todoApp as todoApp">
+  <div class="container-fluid">
+    <div class="col-md-4 top-buffer">
+      <div class="panel panel-success top-buffer">
+        <div class="panel-heading">Add todo item</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Text:</label>
+            <input ng-model="todoApp.todoName" type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Priority:</label>
+            <select class="form-control" ng-model="todoApp.priority" ng-options="priority[0] for priority in todoApp.priorities">
+              <option value="" selected disabled>Please select...</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-footer"><button type="button" class="btn btn-success" ng-click="todoApp.addTodo()">Add Item</button></div>
+      </div>
+    </div>
+    <div class="col-md-4 top-buffer">
+      <div class="panel panel-success top-buffer">
+        <div class="panel-heading">Add todo item</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Text:</label>
+            <input ng-model="todoApp.todoName" type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Priority:</label>
+            <select class="form-control" ng-model="todoApp.priority" ng-options="priority[0] for priority in todoApp.priorities">
+              <option value="" selected disabled>Please select...</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-footer"><button type="button" class="btn btn-success" ng-click="todoApp.addTodo()">Add Item</button></div>
+      </div>
+    </div>
+    <div class="col-md-4 top-buffer">
+      <div class="panel panel-success top-buffer">
+        <div class="panel-heading">Add todo item</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Text:</label>
+            <input ng-model="todoApp.todoName" type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Priority:</label>
+            <select class="form-control" ng-model="todoApp.priority" ng-options="priority[0] for priority in todoApp.priorities">
+              <option value="" selected disabled>Please select...</option>
+            </select>
+          </div>
+        </div>
+        <div class="panel-footer"><button type="button" class="btn btn-success" ng-click="todoApp.addTodo()">Add Item</button></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

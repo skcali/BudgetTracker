@@ -3,15 +3,23 @@
 
     angular
         .module('BudgetTracker')
-        .controller('btCtrl', btCtrl);
+        .controller('BudgetTrackerCtrl', btCtrl);
 
     /* @ngInject */
-    function bgCtrl() {
+    function btCtrl() {
         var vm = this;
 
+        vm.addExpense = [];
+        vm.addIncome = [];
 
+        vm.addExpenseClick = function (name, amount) {
+          vm.addExpense.push(vm.expenseInput);
+          vm.expenseInput = {};
+        };
 
-
-
+        vm.addIncomeClick = function (name, amount) {
+          vm.addIncome.push(vm.incomeInput);
+          vm.incomeInput = {};
+        };
     }
 })();

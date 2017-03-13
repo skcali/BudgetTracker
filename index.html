@@ -17,7 +17,7 @@
     <!-- endinject -->
 </head>
 
-<body ng-controller="btCtrl as btCtrl">
+<body ng-controller="BudgetTrackerCtrl as btCtrl">
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -30,13 +30,13 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label>Description:</label>
-                        <input ng-model="" type="text" class="form-control" />
+                        <input ng-model="btCtrl.incomeInput.name" type="text" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Amount:</label>
-                        <input type="number" class="form-control" ng-model="" />
+                        <input type="number" class="form-control" ng-model="btCtrl.incomeInput.amount" />
                     </div>
-                    <button type="button" class="btn btn-success btn-block" ng-click="">+ Add Income</button>
+                    <button type="button" class="btn btn-success btn-block" ng-click="btCtrl.addIncomeClick()">+ Add Income</button>
                     <hr>
                     <table class="table">
                         <thead>
@@ -46,9 +46,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Paycheck</td>
-                                <td class="text-right">$4000</td>
+                            <tr ng-repeat="income in btCtrl.addIncome">
+                                <td>{{income.name}}</td>
+                                <td class="text-right">{{income.amount | currency}}</td>
+                                <td ng-init="btCtrl.incomeSum = btCtrl.incomeSum + income.amount"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -61,13 +62,13 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label>Description:</label>
-                        <input ng-model="" type="text" class="form-control" />
+                        <input ng-model="btCtrl.expenseInput.name" type="text" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Amount:</label>
-                        <input type="number" class="form-control" ng-model="" />
+                        <input type="number" class="form-control" ng-model="btCtrl.expenseInput.amount" />
                     </div>
-                    <button type="button" class="btn btn-danger btn-block" ng-click="">+ Add Income</button>
+                    <button type="button" class="btn btn-danger btn-block" ng-click="btCtrl.addExpenseClick()">+ Add Income</button>
                     <hr>
                     <table class="table">
                         <thead>
@@ -77,9 +78,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Rent</td>
-                                <td class="text-right">$1500</td>
+                            <tr ng-repeat="expense in btCtrl.addExpense">
+                                <td>{{expense.name}}</td>
+                                <td class="text-right">{{expense.amount | currency}}</td>
+                                <td ng-init="btCtrl.expenseSum = btCtrl.expenseSum + expense.amount"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -93,16 +95,16 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class>Total Income</th>
+                                <th>Total Income</th>
                                 <th>Total Expense</th>
                                 <th>Left After Spending</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>$4000</td>
-                                <td>$1500</td>
-                                <td>$2500</td>
+                                <td>{{btCtrl.incomeSum | currency}}</td>
+                                <td>{{btCtrl.expenseSum | currency}}</td>
+                                <td>{{btCtrl.incomeSum - btCtrl.expenseSum | currency}}</td>
                             </tr>
                         </tbody>
                     </table>
